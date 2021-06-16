@@ -22,10 +22,7 @@ public class SelenideTest {
         open("https://github.com");
         $(".header-search-input").setValue("eroshenkoam/allure-example").pressEnter();
         $(By.linkText("eroshenkoam/allure-example")).click();
-        $(withText("Iissues")).click();
+        $(withText("Issues")).click();
         $(withText("#68")).should(exist);
-
-        sleep(3000);
-
     }
 }
