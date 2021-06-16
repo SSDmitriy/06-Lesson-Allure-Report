@@ -6,10 +6,11 @@ import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 
 import static com.codeborne.selenide.Condition.exist;
+import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.withText;
 import static com.codeborne.selenide.Selenide.*;
 
-public class SelenideTest {
+public class PureSelenideTest {
 
     @BeforeAll
     public static void setup() {
@@ -24,5 +25,6 @@ public class SelenideTest {
         $(By.linkText("eroshenkoam/allure-example")).click();
         $(withText("Issues")).click();
         $(withText("#68")).should(exist);
+        $("#issue_68_link").shouldHave(text("Listeners NamedBy"));
     }
 }
